@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tic-Tac-Toe</title>
+    <link rel="stylesheet" href="styl.css">
+</head>
+<body>
+
+    <header id="navbar">
+        <h1>Tic-Tac-Toe</h1>
+        <div class="controls">
+          <i class="fas fa-expand" id="fullscreen-toggle" title="Fullscreen"></i>
+          <i class="fa-solid fa-circle-half-stroke" id="themes" title="Light Theme"></i>
+        </div>
+    </header>
+
+    <main class="main-content">
+        <div id="setup">
+            <h2>Select Game Mode</h2>
+            <button id="play-human">Play Against Human</button>
+            <button id="play-ai">Play Against AI</button>
+        </div>
+        <div id="player-info">
+            <div id="player-names">
+                <input type="text" id="player1" placeholder="Player 1 Name" style="display: none;">
+                <input type="text" id="player2" placeholder="Player 2 Name" style="display: none;">
+                <button id="start-game">Start Game</button>
+            </div>
+        </div>
+        <div id="game-info">
+            <div id="current-player">Current Player: </div>
+            <div id="game-board">
+                <!-- Game cells -->
+                <div class="cell" data-index="0">1</div>
+                <div class="cell" data-index="1">2</div>
+                <div class="cell" data-index="2">3</div>
+                <div class="cell" data-index="3">4</div>
+                <div class="cell" data-index="4">5</div>
+                <div class="cell" data-index="5">6</div>
+                <div class="cell" data-index="6">7</div>
+                <div class="cell" data-index="7">8</div>
+                <div class="cell" data-index="8">9</div>
+            </div>
+            <div id="winner-message">winner-message</div>
+            <button id="reset-game">Reset Game</button>
+            <button id="home-button">Home</button>
+        </div>
+    </main>
+    <script src="script.js"></script>
+</body>
+</html>
