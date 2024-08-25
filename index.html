@@ -4,7 +4,25 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tic-Tac-Toe</title>
-    <link rel="stylesheet" href="styl.css">
+    <link rel="stylesheet" href="style.css">
+
+    <!--Google fonts-->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- font-awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+      integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+
 </head>
 <body>
 
@@ -19,8 +37,10 @@
     <main class="main-content">
         <div id="setup">
             <h2>Select Game Mode</h2>
-            <button id="play-human">Play Against Human</button>
-            <button id="play-ai">Play Against AI</button>
+            <div class="button-container">
+                <button id="play-human" title="Against Player">Player</button>
+                <button id="play-ai" title="Against AI">AI</button>
+            </div>
         </div>
         <div id="player-info">
             <div id="player-names">
