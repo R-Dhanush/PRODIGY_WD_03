@@ -17,6 +17,7 @@ document.addEventListener("DOMContentLoaded", function() {
             }
         }
     });
+
     document.addEventListener("fullscreenchange", function() {
         if (!document.fullscreenElement) {
             fullscreenIcon.classList.remove("fa-compress");
@@ -24,5 +25,21 @@ document.addEventListener("DOMContentLoaded", function() {
             fullscreenIcon.title = "Fullscreen";
         }
     });
+
+    document.getElementById("play-human").addEventListener("click", function() {
+        document.getElementById("player-info").style.display = "flex";
+        document.getElementById("setup").style.display = "none";
+        document.getElementById("player1").style.display = "flex";
+        document.getElementById("player2").style.display = "flex";
+    });
+    
+    document.getElementById("play-ai").addEventListener("click", function() {
+        document.getElementById("player-info").style.display = "flex";
+        document.getElementById("setup").style.display = "none";
+        document.getElementById("player1").style.display = "flex";
+        document.getElementById("player2").style.display = "none";
+        document.getElementById("player1").placeholder = "Enter Your Name";
+    });
+    
 
 });
