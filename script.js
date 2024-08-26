@@ -41,5 +41,9 @@ document.addEventListener("DOMContentLoaded", function() {
         document.getElementById("player1").placeholder = "Enter Your Name";
     });
     
+    document.getElementById("start-game").addEventListener("click", function() {
+        document.getElementById("player-info").style.display = "none";
+        document.getElementById("game-info").style.display = "flex";
+    });
 
 });
