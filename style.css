@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
 * {
   margin: 0%;
   padding: 0%;
@@ -5,8 +7,8 @@
 }
 
 body {
-  font-family: "Poppins", sans-serif;
-  background-image: url(img/1000_F_600910081_ZUJpUZpTTj2lJBuRpDtMFKs0OtOPuxl4.jpg);
+  font-family: "Press Start 2P";
+  background: linear-gradient(rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.25)), url('img/tic-tac-toe.png') center/cover no-repeat;
   color: #fff;
 }
 
@@ -14,11 +16,16 @@ body {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  height: 5vh;
   padding: 0% 1rem;
   background-color: #000;
-  color: #5eb1bf;
+  color: #fff;
   z-index: 10;
   box-shadow: 0px 5px 5px hsla(0, 0%, 0%, 0.6);
+}
+
+#navbar h1{
+  font-size: 1em;
 }
 
 #fullscreen-toggle:hover{
@@ -34,17 +41,17 @@ body {
 }
 
 #setup {
-    display: none;
+    display: flex;
     flex-direction: column;
     justify-content: space-around;
     align-items: center;
-    background-color: #5eb1bf;
+    background-color: #222;
     min-width: 30%;
     height: auto;
     aspect-ratio: 2 / 1;
     text-align: center;
     border-radius: 10px;
-    box-shadow: 0px 0px 25px hsla(0, 0%, 0%, 0.2);
+    box-shadow: 0px 0px 15px hsla(0, 0%, 0%);
     padding: 20px;
 }
 
@@ -58,6 +65,7 @@ body {
     display: flex;
     justify-content: space-evenly;
     width: 100%;
+    
 }
 
 .button-container button{
@@ -66,17 +74,17 @@ body {
     padding: 10px;
     border: none;
     border-radius: 10px;
+    font-family: "Press Start 2P";
     font-size: 1rem;
 }
 
 .button-container button:hover{
-    background-color: rgb(199, 247, 255);
-    box-shadow: 0px 0px 5px hsla(0, 0%, 0%, 0.4);
+    box-shadow: 2px 2px 2px hsla(0, 0%, 0%), -2px -2px 2px hsl(0, 0%, 100%);
     transform: scale(1.05);
 }
 
 #player-info{
-    display: flex;
+    display: none;
     justify-content: center;
     align-items: center;
     background-color: #5eb1bf;
