@@ -193,3 +193,71 @@ background-color: #fff200;
   box-shadow: 2px 2px 2px hsla(0, 0%, 0%), -2px -2px 2px hsl(57, 100%, 50%);
   transform: scale(1.05);
 }
+
+@media (max-width: 768px) {
+  body {
+    background-size: cover;
+  }
+
+  #navbar {
+    padding: 0 0.5rem;
+  }
+
+  #setup, #player-info, #game-info {
+    width: 95%;
+    max-width: 350px;
+  }
+
+  #setup h2{
+    font-size: 1.25rem;
+}
+
+  .button-container1 button,
+  #button-container2 button {
+    max-width: 40%;
+    font-size: 0.9rem;
+  }
+
+  #game-board {
+    width: 85%;
+    max-width: 300px;
+  }
+
+  #current-player{
+    font-size: 1rem;
+  }
+
+  .cell {
+    font-size: 1.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  #setup, #player-info, #game-info {
+    width: 95%;
+    max-width: 280px;
+    padding: 15px;
+  }
+
+  #setup h2{
+    font-size: 1rem;
+}
+
+  .button-container1 button,
+  #button-container2 button {
+    font-size: 0.8rem;
+  }
+
+  #game-board {
+    width: 90%;
+    max-width: 250px;
+  }
+
+  .cell {
+    font-size: 1.2rem;
+  }
+
+  #navbar h1 {
+    font-size: 0.8em;
+  }
+}

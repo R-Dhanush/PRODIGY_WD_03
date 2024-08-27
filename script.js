@@ -87,7 +87,7 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 
     function startGame() {
-        currentPlayerDisplay.textContent = `Current Player: ${player1Name} (X)`;
+        currentPlayerDisplay.textContent = `${player1Name} (X)`;
         currentPlayer = "X";
         boardState = ["", "", "", "", "", "", "", "", ""];
         isGameActive = true;
@@ -119,7 +119,7 @@ document.addEventListener("DOMContentLoaded", function () {
     function switchPlayer() {
         currentPlayer = currentPlayer === "X" ? "O" : "X";
         const playerName = currentPlayer === "X" ? player1Name : player2Name;
-        currentPlayerDisplay.textContent = `Current Player: ${playerName} (${currentPlayer})`;
+        currentPlayerDisplay.textContent = `${playerName} (${currentPlayer})`;
     }
 
     function aiMove() {
