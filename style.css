@@ -8,7 +8,7 @@
 
 body {
   font-family: "Press Start 2P";
-  background: linear-gradient(rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.25)), url('img/BG-Object.png');
+  background: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)), url('img/BG-Object.png');
   color: #fff;
 }
 
