@@ -13,6 +13,8 @@ document.addEventListener("DOMContentLoaded", function () {
     const homeButton = document.getElementById("home-button");
     const winnerMessage = document.getElementById("winner-message");
     const buttonContainer2 = document.getElementById("button-container2");
+    const winSound = document.getElementById("win-sound");
+    const clickSound = document.getElementById("click-sound");
 
     let currentPlayer = "X";
     let boardState = ["", "", "", "", "", "", "", "", ""];
@@ -74,7 +76,7 @@ document.addEventListener("DOMContentLoaded", function () {
             player2Name = "AI";
         }
         playerInfo.style.display = "none";
-        document.getElementById("game-info").style.display = "flex";
+        gameInfo.style.display = "flex";
         buttonContainer2.style.display = "none"; 
         startGame();
     });
@@ -103,11 +105,12 @@ document.addEventListener("DOMContentLoaded", function () {
 
         boardState[index] = currentPlayer;
         cell.textContent = currentPlayer;
+        clickSound.play();
 
         if (checkWin()) {
-            endGame(`${currentPlayer === "X" ? player1Name : player2Name} Wins!`);
+            endGame(`${currentPlayer === "X" ? player1Name : player2Name} Wins!`, true);
         } else if (boardState.every((cell) => cell !== "")) {
-            endGame("It's a Draw!");
+            endGame("It's a Draw!", false);
         } else {
             switchPlayer();
             if (gameMode === "ai" && currentPlayer === "O") {
@@ -171,9 +174,9 @@ document.addEventListener("DOMContentLoaded", function () {
                 boardState[bestMove] = 'O';
                 document.querySelector(`.cell[data-index='${bestMove}']`).textContent = 'O';
                 if (checkWin()) {
-                    endGame("AI Wins!");
+                    endGame("AI Wins!", true);
                 } else if (boardState.every((cell) => cell !== "")) {
-                    endGame("It's a Draw!");
+                    endGame("It's a Draw!", false);
                 } else {
                     switchPlayer();
                 }
@@ -203,10 +206,19 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     }
 
-    function endGame(message) {
+    function endGame(message, isWin) {
         isGameActive = false;
         winnerMessage.textContent = message;
         buttonContainer2.style.display = "flex";
+        if (isWin) {
+            winSound.play();
+
+            confetti({
+                particleCount: 100,
+                spread: 70,
+                origin: { y: 0.6 }
+            });
+        }
     }
 
     function resetGame() {

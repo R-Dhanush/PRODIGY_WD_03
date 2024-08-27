@@ -6,6 +6,8 @@
     <title>Tic-Tac-Toe</title>
     <link rel="stylesheet" href="style.css">
 
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+
     <!--Google fonts-->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -61,8 +63,10 @@
                 <div class="cell" data-index="6">7</div>
                 <div class="cell" data-index="7">8</div>
                 <div class="cell" data-index="8">9</div>
+                <audio id="click-sound" src="audio/click-effect-86995_jYJhtbY8.mp3"></audio>
             </div>
             <div id="winner-message">winner-message</div>
+            <audio id="win-sound" src="audio/Voicy_Confetti pop with screaming kids.mp3"></audio>
             <div id="button-container2">
                 <button id="reset-game">Reset Game</button>
                 <button id="home-button">Home</button>
