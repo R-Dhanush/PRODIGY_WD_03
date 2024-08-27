@@ -16,12 +16,11 @@ document.addEventListener("DOMContentLoaded", function () {
 
     let currentPlayer = "X";
     let boardState = ["", "", "", "", "", "", "", "", ""];
-    let gameMode = ""; // 'human' or 'ai'
+    let gameMode = "";
     let isGameActive = true;
     let player1Name = "";
     let player2Name = "";
 
-    // Function to toggle the fullscreen
     fullscreenIcon.addEventListener("click", function () {
         if (!document.fullscreenElement) {
             document.documentElement.requestFullscreen();
@@ -52,8 +51,8 @@ document.addEventListener("DOMContentLoaded", function () {
         setupScreen.style.display = "none";
         document.getElementById("player1").style.display = "flex";
         document.getElementById("player2").style.display = "flex";
-        resetNames(); // Reset names only when switching mode
-        resetGame();  // Reset the game state
+        resetNames();
+        resetGame();
     });
 
     playAIBtn.addEventListener("click", function () {
@@ -63,8 +62,8 @@ document.addEventListener("DOMContentLoaded", function () {
         document.getElementById("player1").style.display = "flex";
         document.getElementById("player2").style.display = "none";
         document.getElementById("player1").placeholder = "Enter Your Name";
-        resetNames(); // Reset names only when switching mode
-        resetGame();  // Reset the game state
+        resetNames();
+        resetGame();
     });
 
     startGameBtn.addEventListener("click", function () {
@@ -76,7 +75,7 @@ document.addEventListener("DOMContentLoaded", function () {
         }
         playerInfo.style.display = "none";
         document.getElementById("game-info").style.display = "flex";
-        buttonContainer2.style.display = "none"; // Hide button container initially
+        buttonContainer2.style.display = "none"; 
         startGame();
     });
 
@@ -134,9 +133,9 @@ document.addEventListener("DOMContentLoaded", function () {
 
         const checkWinOrBlock = (player) => {
             const winningCombos = [
-                [0, 1, 2], [3, 4, 5], [6, 7, 8], // Rows
-                [0, 3, 6], [1, 4, 7], [2, 5, 8], // Columns
-                [0, 4, 8], [2, 4, 6]  // Diagonals
+                [0, 1, 2], [3, 4, 5], [6, 7, 8], 
+                [0, 3, 6], [1, 4, 7], [2, 5, 8],
+                [0, 4, 8], [2, 4, 6]  
             ];
 
             for (let combo of winningCombos) {
@@ -155,14 +154,14 @@ document.addEventListener("DOMContentLoaded", function () {
         };
 
         const findBestMove = () => {
-            const winningMove = checkWinOrBlock('O'); // Check for AI winning move
+            const winningMove = checkWinOrBlock('O');
             if (winningMove !== null) return winningMove;
 
-            const blockingMove = checkWinOrBlock('X'); // Check for blocking opponent's winning move
+            const blockingMove = checkWinOrBlock('X');
             if (blockingMove !== null) return blockingMove;
 
             const emptyCells = getEmptyCells();
-            return emptyCells[Math.floor(Math.random() * emptyCells.length)]; // Random move if no winning/blocking move
+            return emptyCells[Math.floor(Math.random() * emptyCells.length)];
         };
 
         const bestMove = findBestMove();
@@ -207,7 +206,7 @@ document.addEventListener("DOMContentLoaded", function () {
     function endGame(message) {
         isGameActive = false;
         winnerMessage.textContent = message;
-        buttonContainer2.style.display = "flex"; // Show button container only after game ends
+        buttonContainer2.style.display = "flex";
     }
 
     function resetGame() {
@@ -215,7 +214,7 @@ document.addEventListener("DOMContentLoaded", function () {
         isGameActive = true;
         winnerMessage.textContent = "";
         cells.forEach((cell) => (cell.textContent = ""));
-        buttonContainer2.style.display = "none"; // Hide button container when resetting game
+        buttonContainer2.style.display = "none";
         startGame();
     }
 
