@@ -170,3 +170,26 @@ background-color: #fff200;
   font-size: 2rem;
   cursor: pointer;
 }
+
+.button-container2 {
+  display: flex;
+  justify-content: space-evenly;
+  width: 100%;
+  
+}
+
+.button-container2 button{
+  flex: 1;
+  max-width: 25%;
+  padding: 10px;
+  border: none;
+  border-radius: 10px;
+  font-family: "Press Start 2P";
+  font-size: 0.75rem;
+}
+
+.button-container2 button:hover{
+background-color: #fff200;
+  box-shadow: 2px 2px 2px hsla(0, 0%, 0%), -2px -2px 2px hsl(57, 100%, 50%);
+  transform: scale(1.05);
+}
