@@ -124,20 +124,20 @@ document.addEventListener("DOMContentLoaded", function () {
 
     function aiMove() {
         if (!isGameActive) return;
-
+    
         const getEmptyCells = () => {
             return boardState
                 .map((value, index) => (value === "" ? index : null))
                 .filter((val) => val !== null);
         };
-
+    
         const checkWinOrBlock = (player) => {
             const winningCombos = [
                 [0, 1, 2], [3, 4, 5], [6, 7, 8], 
                 [0, 3, 6], [1, 4, 7], [2, 5, 8],
                 [0, 4, 8], [2, 4, 6]  
             ];
-
+    
             for (let combo of winningCombos) {
                 const [a, b, c] = combo;
                 if (boardState[a] === player && boardState[b] === player && boardState[c] === "") {
@@ -152,20 +152,20 @@ document.addEventListener("DOMContentLoaded", function () {
             }
             return null;
         };
-
+    
         const findBestMove = () => {
             const winningMove = checkWinOrBlock('O');
             if (winningMove !== null) return winningMove;
-
+    
             const blockingMove = checkWinOrBlock('X');
             if (blockingMove !== null) return blockingMove;
-
+    
             const emptyCells = getEmptyCells();
             return emptyCells[Math.floor(Math.random() * emptyCells.length)];
         };
-
+    
         const bestMove = findBestMove();
-
+    
         if (bestMove !== null) {
             setTimeout(() => {
                 boardState[bestMove] = 'O';
@@ -179,7 +179,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 }
             }, 500);
         }
-    }
+    }    
 
     function checkWin() {
         const winningCombos = [
